@@ -1,6 +1,6 @@
 let userNumber = 0;
 const result = document.querySelector(".result");
-const userInput = document.querySelector("#userInput").value;
+const userInput = document.querySelector("#userInput");
 const system = document.querySelector("#system");
 function registerUserValue(e) {
   userNumber = e.target.value;
