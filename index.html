@@ -9,23 +9,25 @@
     <main>
       <h1>The numeric system converter</h1>
       <div class="form">
+        <input type="text" id="userInput" />
         <form>
-          <input type="text" id="userInput" />
+          <label for="text">from</label>
           <select id="system">
             <option selected>choose</option>
-            <option value="binary">bin</option>
-            <option value="decimal">dec</option>
-            <option value="hexadecimal">hex</option>
+            <option value="binary">binary</option>
+            <option value="decimal">decimal</option>
+            <option value="hexadecimal">hexadecimal</option>
           </select>
         </form>
-        <!-- <form>
+        <form>
           <label type="text" id="into">into</label>
           <select id="system">
-            <option value="2">2</option>
-            <option value="10">10</option>
-            <option value="16">16</option>
+            <option selected>choose</option>
+            <option value="binary">binary</option>
+            <option value="decimal">decimal</option>
+            <option value="hexadecimal">hexadecimal</option>
           </select>
-        </form> -->
+        </form>
       </div>
 
       <div class="result"></div>
