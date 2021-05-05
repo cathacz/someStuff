@@ -5,28 +5,28 @@ const system = document.querySelector("#system");
 function registerUserValue(e) {
   userNumber = e.target.value;
 }
-
-function convert() {
+function convert(e) {
+  e.preventDefault();
   let currentSystem;
-  var f = document.getElementById("sys");
-  var sys = f.options[f.selectedIndex].value;
-  console.log(system.value);
+  // var f = document.getElementById("sys");
+  // var sys = f.options[f.selectedIndex].value;
+  // console.log(system.value);
   switch (system.value) {
     case "bin":
-      currentSystem = parseInt(userNumber, 2);
+      currentSystem = parseInt(userNumber, 10);
       break;
     case "dec":
-      currentSystem = parseInt(userNumber, 10);
+      currentSystem = 10;
       break;
     case "hex":
-      currentSystem = parseInt(userNumber, 16);
+      currentSystem = 16;
       break;
     default:
-      currentSystem = parseInt(userNumber, 10);
+      currentSystem = 10;
   }
-
-  result.innerHTML = `${parseInt(currentSystem, sys)}`;
+  // result.innerHTML = `${parseInt(userNumber, currentSystem)}`;
+  result.innerHTML = `${currentSystem.toString(16)}`;
+  console.log(currentSystem);
 }
-
 system.addEventListener("change", convert);
 userInput.addEventListener("keyup", registerUserValue);
