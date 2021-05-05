@@ -8,24 +8,26 @@ function registerUserValue(e) {
 function convert(e) {
   e.preventDefault();
   let currentSystem;
+  dec = parseInt(userNumber, 10);
   // var f = document.getElementById("sys");
   // var sys = f.options[f.selectedIndex].value;
   // console.log(system.value);
   switch (system.value) {
-    case "bin":
-      currentSystem = parseInt(userNumber, 10);
+    case "binary":
+      currentSystem = 2;
+
       break;
-    case "dec":
+    case "decimal":
       currentSystem = 10;
       break;
-    case "hex":
+    case "hexadecimal":
       currentSystem = 16;
       break;
     default:
       currentSystem = 10;
   }
   // result.innerHTML = `${parseInt(userNumber, currentSystem)}`;
-  result.innerHTML = `${currentSystem.toString(16)}`;
+  result.innerHTML = `${dec.toString(currentSystem)}`;
   console.log(currentSystem);
 }
 system.addEventListener("change", convert);
