@@ -8,7 +8,7 @@ function registerUserValue(e) {
 function convert(e) {
   e.preventDefault();
   let currentSystem;
-  dec = parseInt(userNumber, 10);
+  let dec;
   // var f = document.getElementById("sys");
   // var sys = f.options[f.selectedIndex].value;
   // console.log(system.value);
@@ -26,9 +26,24 @@ function convert(e) {
     default:
       currentSystem = 10;
   }
+  switch (sys.value) {
+    case "binary":
+      currentSys = 2;
+      break;
+    case "decimal":
+      currentSys = 10;
+      break;
+    case "hexadecimal":
+      currentSys = 16;
+      break;
+    default:
+      currentSys = 10;
+  }
   // result.innerHTML = `${parseInt(userNumber, currentSystem)}`;
-  result.innerHTML = `${dec.toString(currentSystem)}`;
+  dec = parseInt(userNumber, currentSystem);
+  result.innerHTML = `${dec.toString(currentSys)}`;
   console.log(currentSystem);
+  console.log(currentSys);
 }
-system.addEventListener("change", convert);
+sys.addEventListener("change", convert);
 userInput.addEventListener("keyup", registerUserValue);
